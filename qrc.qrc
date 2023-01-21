@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>raibow icon notepad.jpg</file>
+    </qresource>
+</RCC>

@@ -20,7 +20,7 @@ main_notepad::main_notepad(QWidget* parent) : QMainWindow(parent)
                        );
     pmuFile->addAction("&Save As",
                        pnotepad,
-                       SLOT(SLoad()),
+                       SLOT(SSaveAs()),
                        QKeySequence("CTRL+SHIFT+S")
                        );
     pmuFile->addSeparator();

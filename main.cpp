@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     main_notepad w;
     w.setWindowTitle("Costom Notepad");
     w.setWindowIcon(QIcon(":/icon/raibow icon notepad.jpg"));
+    w.resize(800,600);
     w.show();
     return a.exec();
 }

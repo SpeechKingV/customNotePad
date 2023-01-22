@@ -1,8 +1,10 @@
 #include "notepad_window.h"
+#include "main_notepad.h"
 
 #include <QWidget>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QStatusBar>
 
 //notepad::notepad(QWidget* parent = 0) : QTextEdit(parent)
 //{

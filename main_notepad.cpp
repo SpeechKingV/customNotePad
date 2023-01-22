@@ -1,5 +1,7 @@
 #include "main_notepad.h"
 
+#include <QFile>
+
 main_notepad::main_notepad(QWidget* parent) : QMainWindow(parent)
 {
     QMenu*   pmuFile = new QMenu("&File");
@@ -28,18 +30,25 @@ main_notepad::main_notepad(QWidget* parent) : QMainWindow(parent)
                        SLOT(quit()),
                        QKeySequence("CTRL+Q")
                        );
-    pmuFile->addAction("&About",
+
+
+    pmuHelp->addAction("&About",
                        this,
                        SLOT(SAbout()),
                        Qt::Key_F1
+                       );
+    pmuHelp->addAction("&Help",
+                       this,
+                       SLOT(SHelp()),
+                       QKeySequence("F1+H")
                        );
 
     menuBar()->addMenu(pmuFile);
     menuBar()->addMenu(pmuHelp);
 
     setCentralWidget(pnotepad);
-    connect(pnotepad,SIGNAL(changeWindowTitle(QString)),SLOT(SChangeWindowTitle()));
+    connect(pnotepad,SIGNAL(changeWindowTitle(const QString&)),SLOT(SChangeWindowTitle(const QString&)));
 
-    statusBar()->showMessage("Ready", 2000);
+    statusBar()->showMessage("Ready", 4000);
 
 }

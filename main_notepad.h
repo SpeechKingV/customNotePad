@@ -27,12 +27,13 @@ public slots:
     {
         statusBar()->showMessage("Abouting", 12000);
 
+
         QMessageBox::about(this,"About","(c)SpeechKingV | <a href=\"https://github.com/SpeechKingV/customNotePad\">Я в GitHub</a>");
     }
 
     void SHelp()
     {
-        statusBar()->showMessage("Helping", 12000);
+        statusBar()->showMessage("Helping", 13000);
 
         QMessageBox::about(this,"Help","this is my first Qt project that I posted on GitHub.\n And it's the same notebook, but the one I created is nothing special.\n Maximum rainbow notepad icon");
     }
@@ -40,6 +41,7 @@ public slots:
     void SChangeWindowTitle(const QString& str)
     {
         statusBar()->showMessage("ready", 4000);
+
 
         QString Titel = "Costom Notepad :   "+ str;
 

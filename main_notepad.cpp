@@ -40,7 +40,7 @@ main_notepad::main_notepad(QWidget* parent) : QMainWindow(parent)
     pmuHelp->addAction("&Help",
                        this,
                        SLOT(SHelp()),
-                       QKeySequence("F1+H")
+                       QKeySequence("ctrl+H")
                        );
 
     menuBar()->addMenu(pmuFile);

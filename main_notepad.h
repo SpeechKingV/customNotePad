@@ -11,7 +11,29 @@
 #include <QApplication>
 #include <QStatusBar>
 #include <QAction>
+#include <QApplication>
+#include <QSplashScreen>
+#include <QLabel>
+#include <QTime>
 
+//void load_Window(QSplashScreen* psplash)
+//{
+
+//    int i;
+//    for(i = 0; i < 100;);
+//    {
+//        _sleep(30);
+
+//        psplash->showMessage("Loading : "
+//                            + QString::number(i)+ "%",
+//                             Qt::AlignHCenter | Qt::AlignBottom,
+//                             Qt::black
+//                             );
+//        qApp->processEvents();
+//    }
+
+
+//}
 
 class main_notepad : public QMainWindow
 {
@@ -25,7 +47,7 @@ public slots:
 
     void SAbout()
     {
-        statusBar()->showMessage("Abouting", 12000);
+        statusBar()->showMessage("Abouting");
 
 
         QMessageBox::about(this,"About","(c)SpeechKingV | <a href=\"https://github.com/SpeechKingV/customNotePad\">Я в GitHub</a>");
@@ -33,7 +55,7 @@ public slots:
 
     void SHelp()
     {
-        statusBar()->showMessage("Helping", 12000);
+        statusBar()->showMessage("Helping");
 
         QMessageBox::about(this,"Help","this is my first Qt project that I posted on GitHub.\n And it's the same notebook, but the one I created is nothing special.\n Maximum rainbow notepad icon");
     }

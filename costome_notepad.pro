@@ -4,6 +4,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
+win64:RC_ICONS += myapp.rc
+
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
@@ -27,3 +29,8 @@ FORMS += \
 
 RESOURCES += \
     qrc.qrc
+
+
+# txt_Binar easter egg: 11010000 10111111 11010000 10110000 11010001 10000001 11010001 10000101 11010000 10110000 11010000 10111011 11010000 10111010 11010000 10110000 100000 110001
+# convert to txt: https://www.duplichecker.com/ru/binary-translator
+

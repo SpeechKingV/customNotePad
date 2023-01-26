@@ -10,7 +10,7 @@ class notepad : public QTextEdit
 
 public:
 
-//    notepad(QWidget* parent = 0);
+    //    notepad(QWidget* parent = 0);
 
 private:
 
@@ -23,9 +23,10 @@ signals:
 
 public slots:
 
-    void SLoad  ();
-    void SSave  ();
-    void SSaveAs();
+    void SLoad     ();
+    void SSave     ();
+    void SSaveAs   ();
+    void SCloseFile();
 
 };
 

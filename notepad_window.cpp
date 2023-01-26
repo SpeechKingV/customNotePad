@@ -5,6 +5,7 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QStatusBar>
+#include <QFileInfo>
 
 //notepad::notepad(QWidget* parent = 0) : QTextEdit(parent)
 //{
@@ -19,7 +20,9 @@ void notepad::SLoad()
         return;
     }
 
+
     QFile file(str);
+    QFileInfo fileinfo (file);
     if (file.open(QIODevice::ReadOnly))
     {
         QTextStream stream(&file);
@@ -27,7 +30,7 @@ void notepad::SLoad()
         file.close();
 
         strFileName = str;
-        emit changeWindowTitle(strFileName);
+        emit changeWindowTitle(fileinfo.baseName());
     }
 }
 
@@ -43,17 +46,35 @@ void notepad::SSaveAs()
 
 void notepad::SSave()
 {
+    QFile file(strFileName);
+
     if (strFileName.isEmpty())
     {
+        file.setFileName("unnamed");
         SSaveAs();
         return;
     }
 
-    QFile file(strFileName);
+    QFileInfo fileinfo (file);
     if(file.open(QIODevice::WriteOnly))
     {
         QTextStream(&file) << toPlainText();
         file.close();
-        emit changeWindowTitle(strFileName);
+        emit changeWindowTitle(fileinfo.baseName());
     }
+}
+
+void notepad::SCloseFile()
+{
+    QFile file(strFileName);
+
+    if (strFileName.isEmpty())
+    {
+        file.setFileName("unsaved(costum Notepad)");
+        SSave();
+        file.close();
+        return;
+    }
+        file.close();
+
 }

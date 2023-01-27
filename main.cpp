@@ -10,7 +10,7 @@ void load_Window(QSplashScreen* psplash)
     for(i = 0; i < 100; i++)
     {
 
-        QThread::msleep(600);
+        QThread::msleep(60);
 
         psplash->showMessage("Loading : "
                             + QString::number(i)+ "%",
@@ -26,6 +26,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QSplashScreen splash(QPixmap(":/icon/raibow icon notepad.jpg"));
+
+    splash.show();
+
+    load_Window(&splash);
 
     main_notepad w;
     w.setWindowTitle("Costom Notepad");
